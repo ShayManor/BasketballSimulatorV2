@@ -13,8 +13,10 @@ menu_path = "//*[@id='__next']/div[2]/div[2]/div[3]/section[2]/div/div[2]/div[2]
 all_path = "//*[@id='__next']/div[2]/div[2]/div[3]/section[2]/div/div[2]/div[2]/div[1]/div[3]/div/label/div/select/option[1]"
 # number of years back to go
 num_years = 24
+
 chrome_options = Options()
 driver = webdriver.Chrome(options=chrome_options)
+
 final_players = []
 for year_index in range(num_years):
     driver.get(
