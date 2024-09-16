@@ -18,9 +18,10 @@ chrome_options = Options()
 driver = webdriver.Chrome(options=chrome_options)
 
 final_players = []
+# Get the data for each year
 for year_index in range(num_years):
     driver.get(
-        f"https://www.nba.com/stats/players/bio?Season={2023 - year_index}-{24 - year_index}&SeasonType=Regular%20Season&dir=D&sort=NET_RATING")
+        f"https://www.nba.com/stats/players/bio?Season={2023 - year_index}-{str(2024 - year_index)[2:]}&SeasonType=Regular%20Season&dir=D&sort=NET_RATING")
 
     driver.find_elements(By.XPATH, menu_path)[0].click()
     driver.find_elements(By.XPATH, all_path)[0].click()
