@@ -1,20 +1,23 @@
 class Game:
-    def __init__(id, players1, players2, scores, year):
+    def __init__(self, id, team, opponent, date, score, year):
         self.id = id
-        self.Players1 = Players1
-        self.Players2 = Players2
-        self.scores = scores
+        self.team = team
+        self.opponent = opponent
+        self.date = date
+        self.score = score
         self.year = year
+        self.rolling_average = 0
     
     def to_dict(self):
-        return {
+        d = {
             "id": self.id,
-            "Players1": self.Players1,
-            "Players2": self.Players2,
-            "scores": self.scores,
+            "team": self.team,
+            "opponent": self.opponent,
+            "score": self.score,
+            "date": self.date,
             "year": self.year,
         }
-    
-    def to_jsonl(self):
-        pass
+        if self.rolling_average != 0:
+            d["rolling_average"] = self.rolling_average
+        return d
     

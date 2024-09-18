@@ -1,0 +1,352 @@
+[
+  {
+    "id" : 1 ,
+    "team" : "ORL" ,
+    "opponent" : "MIL" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 2 ,
+    "team" : "MIN" ,
+    "opponent" : "PHX" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 3 ,
+    "team" : "PHX" ,
+    "opponent" : "MIN" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 4 ,
+    "team" : "LAC" ,
+    "opponent" : "HOU" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 5 ,
+    "team" : "HOU" ,
+    "opponent" : "LAC" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 6 ,
+    "team" : "DAL" ,
+    "opponent" : "OKC" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 7 ,
+    "team" : "OKC" ,
+    "opponent" : "DAL" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 8 ,
+    "team" : "NYK" ,
+    "opponent" : "CHI" ,
+    "score" : "265" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 9 ,
+    "team" : "CHI" ,
+    "opponent" : "NYK" ,
+    "score" : "265" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 10 ,
+    "team" : "GSW" ,
+    "opponent" : "UTA" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 11 ,
+    "team" : "CHA" ,
+    "opponent" : "CLE" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 12 ,
+    "team" : "CLE" ,
+    "opponent" : "CHA" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 13 ,
+    "team" : "BKN" ,
+    "opponent" : "PHI" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 14 ,
+    "team" : "PHI" ,
+    "opponent" : "BKN" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 15 ,
+    "team" : "WAS" ,
+    "opponent" : "BOS" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 16 ,
+    "team" : "UTA" ,
+    "opponent" : "GSW" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 17 ,
+    "team" : "SAC" ,
+    "opponent" : "POR" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 18 ,
+    "team" : "POR" ,
+    "opponent" : "SAC" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 19 ,
+    "team" : "LAL" ,
+    "opponent" : "NOP" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 20 ,
+    "team" : "NOP" ,
+    "opponent" : "LAL" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 21 ,
+    "team" : "MEM" ,
+    "opponent" : "DEN" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 22 ,
+    "team" : "DEN" ,
+    "opponent" : "MEM" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 23 ,
+    "team" : "DET" ,
+    "opponent" : "SAS" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 24 ,
+    "team" : "SAS" ,
+    "opponent" : "DET" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 25 ,
+    "team" : "BOS" ,
+    "opponent" : "WAS" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 26 ,
+    "team" : "ATL" ,
+    "opponent" : "IND" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 27 ,
+    "team" : "IND" ,
+    "opponent" : "ATL" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 28 ,
+    "team" : "TOR" ,
+    "opponent" : "MIA" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 29 ,
+    "team" : "MIA" ,
+    "opponent" : "TOR" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 30 ,
+    "team" : "MIL" ,
+    "opponent" : "ORL" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 31 ,
+    "team" : "WAS" ,
+    "opponent" : "CHI" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 32 ,
+    "team" : "CHI" ,
+    "opponent" : "WAS" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 33 ,
+    "team" : "PHI" ,
+    "opponent" : "ORL" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 34 ,
+    "team" : "ORL" ,
+    "opponent" : "PHI" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 35 ,
+    "team" : "BOS" ,
+    "opponent" : "CHA" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 36 ,
+    "team" : "CHA" ,
+    "opponent" : "BOS" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 37 ,
+    "team" : "IND" ,
+    "opponent" : "CLE" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 38 ,
+    "team" : "CLE" ,
+    "opponent" : "IND" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 39 ,
+    "team" : "BKN" ,
+    "opponent" : "NYK" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 40 ,
+    "team" : "NYK" ,
+    "opponent" : "BKN" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 41 ,
+    "team" : "MIA" ,
+    "opponent" : "TOR" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 42 ,
+    "team" : "TOR" ,
+    "opponent" : "MIA" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 43 ,
+    "team" : "MIL" ,
+    "opponent" : "OKC" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 44 ,
+    "team" : "OKC" ,
+    "opponent" : "MIL" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 45 ,
+    "team" : "MIN" ,
+    "opponent" : "ATL" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 46 ,
+    "team" : "ATL" ,
+    "opponent" : "MIN" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 47 ,
+    "team" : "DAL" ,
+    "opponent" : "DET" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 48 ,
+    "team" : "DET" ,
+    "opponent" : "DAL" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 49 ,
+    "team" : "SAS" ,
+    "opponent" : "DEN" ,
+    "score" : "240" ,
+    "year" : 2024
+  } ,
+  {
+    "id" : 50 ,
+    "team" : "DEN" ,
+    "opponent" : "SAS" ,
+    "score" : "240" ,
+    "year" : 2024
+  }
+]
