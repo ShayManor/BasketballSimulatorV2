@@ -24,7 +24,6 @@ class Team:
                 game["rolling_average"] = game["score"]
                 return
             avg_sum += int(game["score"])
-            print(i)
             avg_sum -= int(self.games[i+window-1]["score"])
             if len(self.games) - i <= window:
                 game["rolling_average"] = avg_sum / (len(self.games)-i)
@@ -32,7 +31,6 @@ class Team:
                 game["rolling_average"] = avg_sum / (window)
             if len(self.games) - i <= window:
                 window -= 1
-            print(game)
 
     def get_rolling_average(self):
         rolling_games = []
@@ -42,14 +40,12 @@ class Team:
         for game in self.games:
             if len(rolling_games) < 5:
                 rolling_games.append(int(game["score"]))
-            print(rolling_games)
             if self.games.index(game) >= 5:
                 rolling_games.append(int(game["score"]))
                 rolling_games.pop(0)
             game["rolling_average"] = sum(rolling_games) / min(5, self.games.index(game) + 1)
             if len(rolling_games) != 5:
                 print("ERROR")
-                # print(rolling_games)
                 print(len(rolling_games))
 
 

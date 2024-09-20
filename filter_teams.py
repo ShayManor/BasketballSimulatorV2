@@ -17,11 +17,16 @@ class filter_teams:
         self.team_names = []
         self.teams = {}
 
-
     def filter_teams_years(self):
         for game in self.games:
             if game["year"] not in self.year_indexes:
                 self.year_indexes[game["year"]] = self.games.index(game)
+        for year in range(len(self.year_indexes)):
+            if year == 0:
+                continue
+            self.team_names = []
+            self.filter_teams_years()
+
         # for year in range(len(games)):
         #     if year_indexes.keys() == 0:
         #         # TODO: The years don't work. When years increase, the teams stay the same and things break. Fix this.
@@ -50,13 +55,8 @@ class filter_teams:
         return json.dumps(teams_dict)
 
     def finalize_data(self):
-        self.filter_teams_years()
         open("teams.json", "w").write(self.filter_games())
 
 
-f = filter_teams()
-f.finalize_data()
-for i in range(20):
-    print(str(f.teams["ATL"].games[i]["rolling_average"]) + "   " + str(f.teams["ATL"].games[i]["score"]))
-
-# ATL_games = f.teams["ATL"].games.get()
+# f = filter_teams()
+# f.finalize_data()

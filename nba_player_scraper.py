@@ -13,10 +13,8 @@ from player import Player
 
 class player_scraper():
     def __init__(self):
-        self.menu_path = "//*[@id='__next']/div[2]/div[2]/div[3]/section[2]/div/div[2]/div[2]/div[1]/div[3]/div/label/div"
-        self.all_path = "//*[@id='__next']/div[2]/div[2]/div[3]/section[2]/div/div[2]/div[2]/div[1]/div[3]/div/label/div/select/option[1]"
         # number of years back to go
-        self.num_years = 1
+        self.num_years = 20
 
         self.chrome_options = Options()
         self.driver = webdriver.Chrome(options=self.chrome_options)
@@ -29,15 +27,18 @@ class player_scraper():
         #         f"https://www.nba.com/stats/players/bio?Season=2023-2024&SeasonType=Regular%20Season&dir=D")
         for year_index in range(self.num_years):
             self.driver.get(
-                f"https://www.nba.com/stats/players/bio?Season={2023 - self.num_years}-{str(2024 - self.num_years)[2:]}&SeasonType=Regular%20Season")
-            print(len(self.driver.find_elements(By.XPATH, self.menu_path)))
-            self.driver.find_elements(By.XPATH, self.all_path)[0].click()
+                f"https://www.nba.com/stats/players/bio?Season={2023 - year_index}-{str(2024 - year_index)[2:]}&SeasonType=Regular%20Season")
+            # print(len(self.driver.find_elements(By.XPATH, self.menu_path)))
+            # self.driver.find_elements(By.XPATH, self.all_path)[0].click()
             # Get the data table
             wait = WebDriverWait(self.driver, 10)
             table_body = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "Crom_body__UYOcU")))
             rows = table_body.find_elements(By.TAG_NAME, "tr")
             players = []
+            index = 0
             for row in rows:
+                index += 1
+                self.select_all()
                 reduced_player_data = []
                 cols = row.find_elements(By.TAG_NAME, "td")
                 for col in cols:
@@ -45,9 +46,22 @@ class player_scraper():
                 players.append(Player(rows.index(row), reduced_player_data, 2024 - year_index))
             self.final_players.append(players)
         # finalizes data
-        for player in players:
-            self.final_players_dict.append(player.to_dict())
+            for player in players:
+                self.final_players_dict.append(player.to_dict())
 
     def finalize_data(self):
-        print(json.dumps(self.final_players_dict))
+        # print(json.dumps(self.final_players_dict))
         open("players.json", "w").write(json.dumps(self.final_players_dict))
+
+    def select_all(self):
+        all_selector = self.driver.find_elements(By.XPATH, "//option[@value='-1']")
+        selector_test = False
+        for selector in all_selector:
+            if selector.text == "All":
+                selector.click()
+                selector_test = True
+                break
+        if not selector_test and len(all_selector) > 0:
+            print("ERROR")
+            print(len(all_selector))
+
