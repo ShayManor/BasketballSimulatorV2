@@ -1,7 +1,7 @@
 
 class Player:
-    def __init__(self, id, bio_stats, year):
-        self.id = id
+    def __init__(self, player_id, bio_stats, year):
+        self.player_id = player_id
         self.name = bio_stats[0]
         self.team = bio_stats[1]
         self.age = bio_stats[2]
@@ -27,9 +27,9 @@ class Player:
 
     def to_dict(self):
         return {
-            "id": self.id,
+            "id": self.player_id,
             "name": self.name,
-            # "team": self.team,
+            "team": self.team,
             "age": self.age,
             "height": self.height,
             "weight": self.weight,

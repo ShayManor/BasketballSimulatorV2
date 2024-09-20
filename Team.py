@@ -1,6 +1,8 @@
+import json
+
+
 class Team:
     def __init__(self, name, year):
-        self.id = id
         self.name = name
         self.year = year
         self.games = []
@@ -13,18 +15,49 @@ class Team:
     def append_game(self, game):
         self.games.append(game)
 
-    def get_rolling_avg(self, game):
-        index = self.games.index(game)
-        if len(self.games) -index < 5:
-            return sum([game.score for game in self.games[index:]]) / (len(self.games)-index)
-        else:
-            return sum([game.score for game in self.games[index - 5:index]]) / 5
+    def set_rolling_avg(self):
+        avg_sum = sum([int(game["score"]) for game in self.games[-5:]])
+        window = 5
+        for i in range(len(self.games)):
+            game = self.games[i]
+            if window == 1:
+                game["rolling_average"] = game["score"]
+                return
+            avg_sum += int(game["score"])
+            print(i)
+            avg_sum -= int(self.games[i+window-1]["score"])
+            if len(self.games) - i <= window:
+                game["rolling_average"] = avg_sum / (len(self.games)-i)
+            else:
+                game["rolling_average"] = avg_sum / (window)
+            if len(self.games) - i <= window:
+                window -= 1
+            print(game)
+
+    def get_rolling_average(self):
+        rolling_games = []
+        self.games = self.games[::-1]
+        # for g in range(5):
+        #     rolling_games.append(int(self.games[g]["score"]))
+        for game in self.games:
+            if len(rolling_games) < 5:
+                rolling_games.append(int(game["score"]))
+            print(rolling_games)
+            if self.games.index(game) >= 5:
+                rolling_games.append(int(game["score"]))
+                rolling_games.pop(0)
+            game["rolling_average"] = sum(rolling_games) / min(5, self.games.index(game) + 1)
+            if len(rolling_games) != 5:
+                print("ERROR")
+                # print(rolling_games)
+                print(len(rolling_games))
+
+
 
     def to_dict(self):
         return {
-            "id": self.id,
             "name": self.name,
             "year": self.year,
-            "games": [game.to_dict() for game in self.games],
-            "players": [player.to_dict() for player in self.players],
+            "games": self.games,
+            "players": self.players,
         }

@@ -1,6 +1,6 @@
 class Game:
-    def __init__(self, id, team, opponent, date, score, year):
-        self.id = id
+    def __init__(self, game_id, team, opponent, date, score, year):
+        self.game_id = game_id
         self.team = team
         self.opponent = opponent
         self.date = date
@@ -10,7 +10,7 @@ class Game:
     
     def to_dict(self):
         d = {
-            "id": self.id,
+            "id": self.game_id,
             "team": self.team,
             "opponent": self.opponent,
             "score": self.score,
