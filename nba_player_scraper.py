@@ -21,7 +21,6 @@ class player_scraper():
         self.final_players = []
         self.final_players_dict = []
 
-
     def scrape_players(self):
         # Get the data for each year
         #         f"https://www.nba.com/stats/players/bio?Season=2023-2024&SeasonType=Regular%20Season&dir=D")
@@ -31,6 +30,7 @@ class player_scraper():
             # print(len(self.driver.find_elements(By.XPATH, self.menu_path)))
             # self.driver.find_elements(By.XPATH, self.all_path)[0].click()
             # Get the data table
+            self.select_all()
             wait = WebDriverWait(self.driver, 10)
             table_body = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "Crom_body__UYOcU")))
             rows = table_body.find_elements(By.TAG_NAME, "tr")
@@ -38,14 +38,14 @@ class player_scraper():
             index = 0
             for row in rows:
                 index += 1
-                self.select_all()
                 reduced_player_data = []
                 cols = row.find_elements(By.TAG_NAME, "td")
                 for col in cols:
                     reduced_player_data.append(col.text)
                 players.append(Player(rows.index(row), reduced_player_data, 2024 - year_index))
+                print(players)
             self.final_players.append(players)
-        # finalizes data
+            # finalizes data
             for player in players:
                 self.final_players_dict.append(player.to_dict())
 
@@ -65,3 +65,5 @@ class player_scraper():
             print("ERROR")
             print(len(all_selector))
 
+
+player_scraper().scrape_players()
