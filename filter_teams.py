@@ -38,15 +38,19 @@ class filter_teams:
             name = game["team"]
             if name in self.SWITCHED_TEAMS:
                 name = self.SWITCHED_TEAMS[name]
-            if name not in self.team_names:
-                self.team_names.append(name)
-                self.teams[name] = Team(name, game["year"])
+                game["team"] = name
+            self.team_names.append(name)
+            self.teams[name] = Team(name, game["year"])
         for game in self.games:
             name = game["team"]
             self.teams[name].append_game(game)
         for player in self.players:
             if player["draft_number"] == "Undrafted":
                 player["draft_number"] = -1
+            if player["team"] in self.SWITCHED_TEAMS:
+                player["team"] = self.SWITCHED_TEAMS[player["team"]]
+            if player["team"] == '':
+                continue
             self.teams[player["team"]].append_player(player)
         teams_dict = []
         for team in self.teams:
@@ -58,5 +62,5 @@ class filter_teams:
         open("teams.json", "w").write(self.filter_games())
 
 
-# f = filter_teams()
-# f.finalize_data()
+f = filter_teams()
+f.finalize_data()

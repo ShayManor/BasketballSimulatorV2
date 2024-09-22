@@ -30,9 +30,10 @@ class player_scraper():
             # print(len(self.driver.find_elements(By.XPATH, self.menu_path)))
             # self.driver.find_elements(By.XPATH, self.all_path)[0].click()
             # Get the data table
-            self.select_all()
             wait = WebDriverWait(self.driver, 10)
             table_body = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "Crom_body__UYOcU")))
+            print("ran select all")
+            self.select_all()
             rows = table_body.find_elements(By.TAG_NAME, "tr")
             players = []
             index = 0
@@ -43,11 +44,12 @@ class player_scraper():
                 for col in cols:
                     reduced_player_data.append(col.text)
                 players.append(Player(rows.index(row), reduced_player_data, 2024 - year_index))
-                print(players)
             self.final_players.append(players)
+            print(len(players))
             # finalizes data
             for player in players:
                 self.final_players_dict.append(player.to_dict())
+        self.finalize_data()
 
     def finalize_data(self):
         # print(json.dumps(self.final_players_dict))

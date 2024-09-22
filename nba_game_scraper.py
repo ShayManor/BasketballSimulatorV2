@@ -22,10 +22,10 @@ class GameScraper:
         for i in range(self.num_years):
             print(i)
             self.driver.get(
-                f"https://www.nba.com/stats/teams/boxscores?SeasonType=Regular+Season&Season={2023 - i}-{str(2024 - i)[2:]}")
-            self.select_all()
+                f"https://www.nba.com/stats/teams/boxscores?SeasonType=Regular+Season&Season={2020 - i}-{str(2021 - i)[2:]}")
             wait = WebDriverWait(self.driver, 10)
             table_body = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "Crom_body__UYOcU")))
+            self.select_all()
             rows = table_body.find_elements(By.TAG_NAME, "tr")
             index = 0
             for row in rows:
@@ -34,7 +34,7 @@ class GameScraper:
                 cols = row.find_elements(By.TAG_NAME, "td")
                 for col in cols:
                     games_info.append(col.text)
-                games.append(Game(index, games_info[0], games_info[1][-3:], games_info[2], games_info[5], 2024 - i))
+                games.append(Game(index, games_info[0], games_info[1][-3:], games_info[2], games_info[5], 2021 - i))
             games_dict = []
             for game in games:
                 games_dict.append(game.to_dict())
@@ -54,3 +54,6 @@ class GameScraper:
             if not selector_test and len(all_selector) > 0:
                 print("ERROR")
                 print(len(all_selector))
+
+games = GameScraper()
+games.scrape_games()
