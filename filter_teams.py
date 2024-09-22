@@ -27,12 +27,6 @@ class filter_teams:
             self.team_names = []
             self.filter_teams_years()
 
-        # for year in range(len(games)):
-        #     if year_indexes.keys() == 0:
-        #         # TODO: The years don't work. When years increase, the teams stay the same and things break. Fix this.
-        #         # This is not a fix, this is broken code.
-        #         continue
-
     def filter_games(self):
         for game in self.games:
             name = game["team"]
