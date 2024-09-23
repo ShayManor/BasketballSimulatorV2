@@ -9,9 +9,9 @@ class filter_teams:
 
     def __init__(self):
         self.SWITCHED_TEAMS = {"SEA": "OKC", "NOH": "NOP", "NJN": "BKN", "VAN": "MEM", "NOK": "NOP"}
-        with open("games.json", "r") as f:
+        with open("../data/games.json", "r") as f:
             self.games = json.load(f)
-        with open("players.json", "r") as f:
+        with open("../data/players.json", "r") as f:
             self.players = json.load(f)
         self.year_indexes = {}
         self.team_names = []
@@ -53,7 +53,7 @@ class filter_teams:
         return json.dumps(teams_dict)
 
     def finalize_data(self):
-        open("teams.json", "w").write(self.filter_games())
+        open("../data/teams.json", "w").write(self.filter_games())
 
 
 f = filter_teams()

@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from Game import Game
+from src.scripts.Game import Game
 
 
 class GameScraper:
@@ -39,7 +39,7 @@ class GameScraper:
             for game in games:
                 games_dict.append(game.to_dict())
                 print(game.to_dict())
-            with open("games.json", "w") as f:
+            with open("../data/games.json", "w") as f:
                 f.write(json.dumps(games_dict))
 
     def select_all(self):

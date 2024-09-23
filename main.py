@@ -1,6 +1,6 @@
-from filter_teams import filter_teams
-from nba_game_scraper import GameScraper
-from nba_player_scraper import player_scraper
+from src.scripts.filter_teams import filter_teams
+from src.scripts.nba_game_scraper import GameScraper
+from src.scripts.nba_player_scraper import player_scraper
 
 
 games = GameScraper()

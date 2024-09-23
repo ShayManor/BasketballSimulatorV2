@@ -53,7 +53,7 @@ class player_scraper():
 
     def finalize_data(self):
         # print(json.dumps(self.final_players_dict))
-        open("players.json", "w").write(json.dumps(self.final_players_dict))
+        open("../data/players.json", "w").write(json.dumps(self.final_players_dict))
 
     def select_all(self):
         all_selector = self.driver.find_elements(By.XPATH, "//option[@value='-1']")

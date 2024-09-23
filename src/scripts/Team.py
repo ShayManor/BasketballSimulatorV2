@@ -35,8 +35,6 @@ class Team:
     def get_rolling_average(self):
         rolling_games = []
         self.games = self.games[::-1]
-        # for g in range(5):
-        #     rolling_games.append(int(self.games[g]["score"]))
         for game in self.games:
             if len(rolling_games) < 5:
                 rolling_games.append(int(game["score"]))
@@ -47,7 +45,6 @@ class Team:
             if len(rolling_games) != 5:
                 print("ERROR")
                 print(len(rolling_games))
-
 
 
     def to_dict(self):
