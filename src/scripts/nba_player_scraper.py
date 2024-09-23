@@ -23,10 +23,10 @@ class player_scraper():
 
     def scrape_players(self):
         # Get the data for each year
-        #         f"https://www.nba.com/stats/players/bio?Season=2023-2024&SeasonType=Regular%20Season&dir=D")
+        #         f"https://www.nba.com/stats/players/bio?Season=2023-24&SeasonType=Regular%20Season&dir=D&sort=PTS")
         for year_index in range(self.num_years):
             self.driver.get(
-                f"https://www.nba.com/stats/players/bio?Season={2023 - year_index}-{str(2024 - year_index)[2:]}&SeasonType=Regular%20Season")
+                f"https://www.nba.com/stats/players/bio?Season={2023 - year_index}-{str(2024 - year_index)[2:]}&SeasonType=Regular%20Season&dir=D&sort=PTS")
             # print(len(self.driver.find_elements(By.XPATH, self.menu_path)))
             # self.driver.find_elements(By.XPATH, self.all_path)[0].click()
             # Get the data table

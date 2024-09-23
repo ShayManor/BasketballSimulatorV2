@@ -40,7 +40,7 @@ class filter_teams:
             self.teams[name].append_game(game)
         for player in self.players:
             if player["draft_number"] == "Undrafted":
-                player["draft_number"] = -1
+                player["draft_number"] = 61
             if player["team"] in self.SWITCHED_TEAMS:
                 player["team"] = self.SWITCHED_TEAMS[player["team"]]
             if player["team"] == '':
